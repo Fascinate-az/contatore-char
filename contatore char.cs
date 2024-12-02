@@ -7,18 +7,18 @@ int punteggiatura = 0;
 int numeri = 0;
 
 
-foreach(char c in frase)
+ foreach(char c in frase)
 {
-    if ("aeiou".Contains(c))
+    if ("aeiou".Contains(char.ToLower(c)))
         vocali++;
-    else if (char.IsLetter(char.ToLower(c)))
+    else if (char.IsLetter(c))
         consonanti++;
     else if (char.IsPunctuation(c))
         punteggiatura++;
     else if (char.IsDigit(c))
         numeri++;
+    
 }
-Console.WriteLine($"sono state trovate {vocali} vocali, {consonanti} consonanti, {punteggiatura} simboli di punteggiatura, {numeri} numeri; ");
-
+Console.WriteLine($"sono state trovate {vocali} vocali, {consonanti} consonanti, {numeri} numeri e {punteggiatura} simboli di punteggiatura per un totale di {frase.Length} caratteri");
 
 Console.ReadKey();
